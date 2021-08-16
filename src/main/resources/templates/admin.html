@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="fragments/commons :: head"/>
+
+<body>
+    <div th:replace="fragments/commons :: navgation(-1)"/>
+
+    <section >
+        <h2>Lista de roupas</h2>
+        <br/>
+        <a th:href="@{/cadastrar}" class="btn btn-primary">Cadastrar</a>
+        <table class="table">
+            <tr >
+                <th >ID</th>
+                <th>Descricao</th>
+                <th>Preco</th>
+                <th>Quantidade</th>
+                <th>Tipo</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each=" roupa : ${listaRoupas}" >
+                <td th:text="${roupa.id}">ID</td>
+                <td th:text="${roupa.descricao}">descricao</td>
+                <td th:text="${roupa.preco}">preco</td>
+                <td th:text="${roupa.quantidade}">quantidade</td>
+                <td th:text="${roupa.tipo}">tipo</td>
+                <td><a th:href="@{'/deletar/' + ${roupa.id}}" class="btn btn-danger">Excluir</a></td>
+                <td><a th:href="@{'/editar/' + ${roupa.id}}" class="btn btn-danger">Editar</a></td>
+            </tr>
+        </table>
+    </section>
+    <div th:replace="fragments/commons :: footer"/>
+</body>
+</html>

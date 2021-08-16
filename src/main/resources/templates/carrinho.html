@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="fragments/commons :: head"/>
+
+<body>
+    <h2>Carrinho</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Descricao</th>
+            <th>Preco</th>
+            <th>Quantidade</th>
+            <th>Tipo</th>
+        </tr>
+        <tr th:each=" roupa : ${session.carrinho}">
+            <td th:text="${roupa.id}">ID</td>
+            <td th:text="${roupa.descricao}">descricao</td>
+            <td th:text="${roupa.preco}">preco</td>
+            <td th:text="${roupa.quantidade}">quantidade</td>
+            <td th:text="${roupa.tipo}">tipo</td>
+
+        </tr>
+    </table>
+    <a class="btn btn-dark" th:href="@{'/finalizarCompra'}">Finalizar</a>
+</body>
+</html>

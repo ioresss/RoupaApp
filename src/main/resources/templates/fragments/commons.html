@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+  <div th:fragment="navgation(carrinho)">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" th:href="@{/templates/index.html}">Clothing shop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="d-flex">
+            <div th:if="${carrinho >0}">
+              <a class="btn btn-outline-dark" th:if="${carrinho > 0}" th:href="@{/verCarrinho}">
+
+                Carrinho
+                <span class="badge bg-dark text-white ms-1 rounded-pill" th:text="${carrinho}"></span>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div th:fragment="header">
+    <header class="bg-dark py-5">
+      <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+          <h1 class="display-4 fw-bolder">Clothing shop</h1>
+          <p class="lead fw-normal text-white-50 mb-0">roupas para nerds</p>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div th:fragment="footer">
+    <footer class="py-5 bg-dark">
+      <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Yuri Felipe | 2021</p></div>
+    </footer>
+  </div>
+
+
+  <head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Yuri Felipe" />
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css} "/>
+    <script th:src="@{/webjars/popper.js/2.9.3/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.min.js}"></script>
+    <title>Clothing shop</title>
+  </head>
+
+  <section th:fragment="section"class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" >
+
+      </div>
+    </div>
+  </section>
+</html>
